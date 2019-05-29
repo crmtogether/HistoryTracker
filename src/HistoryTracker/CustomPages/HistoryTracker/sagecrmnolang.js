@@ -41,7 +41,7 @@
 		Request.Form,
 		Request.ServerVariables("HTTPS"),
 		Request.ServerVariables("SERVER_NAME"),
-		false,
+		true,
 		Request.ServerVariables("HTTP_USER_AGENT"),
 		Accept);
 		
