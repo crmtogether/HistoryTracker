@@ -27,3 +27,21 @@ and also copies in a file
 
     WWWRoot\js\custom\history.js
 
+---4 June 2019--- Thanks to Wharncliffe Business Systems for this....
+
+To cope with custom entities update the "getEntityFromKey" method in history.js
+
+EG
+
+case "58":
+  var _taskId = crm.url({ arg: 'task_TasksID' });
+  var _Key0id = crm.url({ arg: 'Key' + _key });                           
+  res = _taskId === _Key0id ? "tasks" : "custom";
+  break;
+
+*where task_TasksID is the id in your customentity
+
+The update.asp requires you to add in a Bord_RecDescriptor for the custom entity (this record appears not to be populated when custom entities are created via the component installer).
+
+
+
